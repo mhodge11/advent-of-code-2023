@@ -1,9 +1,13 @@
-import { readData } from '../../shared.ts';
+import { formatData, readData } from '../../shared.ts';
 import chalk from 'chalk';
+import { step2Solution } from './utils/step2Solution.ts';
 
 export async function day12b(dataPath?: string) {
   const data = await readData(dataPath);
-  return 0;
+
+  const input = formatData(data);
+
+  return step2Solution(input);
 }
 
 const answer = await day12b();

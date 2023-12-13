@@ -1,9 +1,11 @@
-import { readData } from '../../shared.ts';
+import { formatDataWithGaps, readData } from '../../shared.ts';
 import chalk from 'chalk';
+import { run } from './lib/step-b.ts';
 
 export async function day13b(dataPath?: string) {
   const data = await readData(dataPath);
-  return 0;
+  const input = formatDataWithGaps(data);
+  return run(input);
 }
 
 const answer = await day13b();

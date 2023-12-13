@@ -1,7 +1,8 @@
 {
-  "name": "@ts-aoc-starter/source",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "@advent-of-code/2023",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "day-1-a": "nx day-1-a",
     "day-1-a:sample": "nx day-1-a --data=sample",
@@ -104,7 +105,6 @@
     "day-25-b": "nx day-25-b",
     "day-25-b:sample": "nx day-25-b --data=sample"
   },
-  "private": true,
   "dependencies": {
     "chalk": "latest",
     "ts-aoc-starter": "1.0.4"
@@ -116,5 +116,16 @@
     "tsx": "latest",
     "typescript": "latest"
   },
-  "type": "module"
+  "description": "TypeScript repo for Advent of Code 2023 solutions",
+  "keywords": [
+    "advent-of-code",
+    "advent",
+    "code",
+    "aoc",
+    "2023",
+    "typescript"
+  ],
+  "author": "Micah Hodge (<micahhodgeutk@icloud.com>)",
+  "repository": "https://github.com/mhodge11/advent-of-code-2023.git",
+  "license": "MIT"
 }
