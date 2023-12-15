@@ -4,6 +4,11 @@
     "target": "ES2019",
     "types": ["node"],
     "allowImportingTsExtensions": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./puzzles/*"],
+      "~/*": ["./*"]
+    }
   }
 }
