@@ -1,5 +1,7 @@
-import { readData } from '../../shared.ts';
 import chalk from 'chalk';
+
+import { formatData, readData, trackRuntime } from '~/shared.ts';
+import { run } from './lib/step-b.ts';
 
 const numbersAsWords = [
   'one',
@@ -26,7 +28,9 @@ const numbersAsWordsReplacements = [
 ];
 
 export async function day1b(dataPath?: string) {
+  runtimeTracker.start();
   const data = await readData(dataPath);
+  return run(formatData(data));
 
   let sum = 0;
 
@@ -61,5 +65,7 @@ export async function day1b(dataPath?: string) {
   return sum;
 }
 
+const runtimeTracker = trackRuntime();
 const answer = await day1b();
+runtimeTracker.done();
 console.log(chalk.bgGreen('Your Answer:'), chalk.green(answer));

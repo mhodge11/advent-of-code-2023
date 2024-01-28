@@ -1,51 +1,15 @@
-import { readData } from '../../shared.ts';
 import chalk from 'chalk';
 
+import { formatData, readData, trackRuntime } from '~/shared.ts';
+import { run } from './lib/step-b.ts';
+
 export async function day2b(dataPath?: string) {
+  runtimeTracker.start();
   const data = await readData(dataPath);
-
-  data.pop();
-
-  let sum = 0;
-
-  data.forEach((item) => {
-    const cubeTracker = {
-      red: 0,
-      green: 0,
-      blue: 0,
-    };
-
-    const [, game] = item.split(': ');
-    const sets = game.split('; ');
-
-    sets.forEach((set) => {
-      const draws = set.split(', ');
-
-      draws.forEach((draw) => {
-        const [id, color] = draw.split(' ');
-        const cubeId = parseInt(id, 10);
-
-        if (cubeId > cubeTracker[color]) {
-          cubeTracker[color] = cubeId;
-        }
-      });
-    });
-
-    const cubeTotals = Object.values(cubeTracker);
-
-    const power = cubeTotals.reduce((acc, curr) => {
-      if (acc === 0) {
-        return curr;
-      }
-
-      return acc * curr;
-    }, 0);
-
-    sum += power;
-  });
-
-  return sum;
+  return run(formatData(data));
 }
 
+const runtimeTracker = trackRuntime();
 const answer = await day2b();
+runtimeTracker.done();
 console.log(chalk.bgGreen('Your Answer:'), chalk.green(answer));
