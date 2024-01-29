@@ -37,8 +37,10 @@
     "baseUrl": "./",
 
     "paths": {
-      "@/*": ["puzzles/*"],
-      "~/*": ["*"]
+      "@helpers/*": ["src/helpers/*"],
+      "@types/*": ["src/types/*"]
     }
-  }
+  },
+  "include": ["src/**/*", "scripts/**/*"],
+  "exclude": ["**/node_modules/**/*", "**/dist/**/*"]
 }

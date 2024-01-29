@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "puzzle": {
+      "implementation": "./dist/index.js",
+      "schema": "./schema.json",
+      "description": "puzzle executor"
+    }
+  }
+}

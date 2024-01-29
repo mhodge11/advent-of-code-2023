@@ -1,16 +1,21 @@
-# ts-aoc-starter
+# @advent-of-code/2023
 
-## Getting Started
+## Description
 
-```terminal
-npx create-ts-aoc-starter
-```
+This repository houses the solutions to [Advent of Code, 2023](https://adventofcode.com). It is modeled after [ts-aoc-starter's](https://github.com/nrwl/ts-aoc-starter/tree/main/packages/ts-aoc-starter) implementation of [Nx](https://nx.dev) to easily read the data to run the puzzles without having any overhead.
 
-This will create a new workspace in the current directory with the following structure:
+## Usage
+
+To initialize the project, follow these steps:
+
+1. Pull down the repo.
+2. Run `pnpm i` from the root of the project.
+3. Then, run `pnpm i && pnpm build` inside the `scripts` folder.
+
+To see where to place your data files, take a look at this example:
 
 ```file-tree
-ts-aoc-starter
-├── puzzles
+├── src
 │   ├── day-1
 │   │   ├── day-1-a.data.txt
 │   │   ├── day-1-a.sample-data.txt
@@ -22,34 +27,14 @@ ts-aoc-starter
 │   ├── day-3
 ```
 
-## Running the Puzzles
+To run a puzzle using sample data:
 
-Copy and paste the sample data given in the problem into the `day-X-a.sample-data.txt` file.
-
-Copy and paste your larger unique actual data set into the `day-X-a.data.txt` file.
-
-Add your solution to the `day-X-a.ts` file.
-
-To run your solution against your sample data set, run the following command:
-
-```terminal
-nx day-1-a --data=sample
+```shell
+pnpm day-1-a:sample
 ```
 
-or
+To run a puzzle using real data:
 
-```terminal
-npm run day-1-a:sample
-```
-
-To run your solution against your actual data set, run the following command:
-
-```terminal
-nx day-1-a
-```
-
-or
-
-```terminal
-npm run day-1-a
+```shell
+pnpm day-1-a
 ```
