@@ -1,5 +1,3 @@
-import chalk from "chalk";
-
 import { readData } from "./readData.ts";
 import { runtimeTracker } from "./runtimeTracker.ts";
 
@@ -27,10 +25,10 @@ export async function runPuzzle(
 	}
 
 	if (error) {
-		console.error(chalk.red(error));
+		console.error(error);
 		return;
 	}
 
-	console.log(chalk.blue("Runtime:"), chalk.blue(runtime.get()));
-	console.log(chalk.green("Answer:"), chalk.bold.green(answer));
+	console.log("Runtime:", runtime.get());
+	console.log("Answer:", answer);
 }

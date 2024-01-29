@@ -6,11 +6,23 @@ This repository houses the solutions to [Advent of Code, 2023](https://adventofc
 
 ## Usage
 
-To initialize the project, follow these steps:
+To initialize the project:
 
-1. Pull down the repo.
-2. Run `pnpm i` from the root of the project.
-3. Then, run `pnpm i && pnpm build` inside the `scripts` folder.
+```shell
+bun i
+```
+
+To run a puzzle using sample data:
+
+```shell
+pnpm day-1-a:sample
+```
+
+To run a puzzle using real data:
+
+```shell
+pnpm day-1-a
+```
 
 To see where to place your data files, take a look at this example:
 
@@ -25,16 +37,4 @@ To see where to place your data files, take a look at this example:
 │   │   └── day-1-b.ts
 │   ├── day-2
 │   ├── day-3
-```
-
-To run a puzzle using sample data:
-
-```shell
-pnpm day-1-a:sample
-```
-
-To run a puzzle using real data:
-
-```shell
-pnpm day-1-a
 ```

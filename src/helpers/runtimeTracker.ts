@@ -4,6 +4,19 @@ interface RuntimeTracker {
 	get: () => string;
 }
 
+function trim(time: number) {
+	let trimmed = time.toFixed(3);
+
+	if (!trimmed.includes(".") || !trimmed.endsWith("0")) return trimmed;
+
+	while (trimmed.endsWith("0") && !trimmed.endsWith("."))
+		trimmed = trimmed.slice(0, -1);
+
+	if (trimmed.endsWith(".")) trimmed = trimmed.slice(0, -1);
+
+	return trimmed;
+}
+
 export function runtimeTracker(): RuntimeTracker {
 	let startTime: number | undefined;
 	let endTime: number | undefined;
@@ -20,8 +33,8 @@ export function runtimeTracker(): RuntimeTracker {
 			if (!endTime) throw new Error("Runtime tracker has not been stopped");
 
 			const time = endTime - startTime;
-			if (time < 1000) return `${time.toFixed(3)} ms`;
-			return `${(time / 1000).toFixed(3)} s`;
+			if (time < 1000) return `${trim(time)} ms`;
+			return `${trim(time / 1000)} s`;
 		},
 	};
 }
