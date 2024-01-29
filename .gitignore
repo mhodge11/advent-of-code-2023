@@ -38,8 +38,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.nx
-
 # ignore data files
 *.data.txt
 *.sample-data.txt
